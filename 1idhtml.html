@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<title>1st Infantry Division</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('test.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url('test.jpg');
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url('test.jpg');
+  min-height: 400px;
+}
+
+/* Discord Logo */
+.discordlogo {
+  width: 40%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+<body>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity w3-hide-small">1st Infantry Division</span>
+    <span class="w3-center w3-padding-large w3-black w3-hide-xlarge w3-hide-xxlarge w3-hide-xxxlarge w3-hide-medium w3-hide-large w3-wide w3-animate-opacity w3-small">1st Infantry Division</span>
+  </div>
+</div>
+
+
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h2 class="w3-center"><u>ABOUT US</u></h2>
+  <h4>Welcome to the 1st Infantry Division! We are an international Mil-Sim light with all the tactics, structure, and skill of a mil-sim without the yes sir no sir hassle. Our mission is to be the best of the best while having the most fun along the way. We welcome anyone with a desire to play the game the right way with open arms. We are a mature, and understanding community with no mandatory attendance at training's or events. We run multiple community wide events and operations from 1 life events, death races, competetive matches against other teams, to internal 1ID scrims between Squads or against other units. </h3>
+  <br>
+  <h4>New recruits will complete a Basic Training which aims to test teamwork, comraderie and basic gun play. It is not required to be a good shot. As long as recruits have a positive attitude and are willing to play as a team, anyone is welcome. Afterwards, recruits will be placed in a regiment of their choosing where and will be considering full members of 1ID.</h3>
+
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">REGIMENTS</span>
+  </div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">Infantry</span><br>
+  </div>
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">Armor</span><br>
+  </div>
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">Aviation</span><br>
+  </div>
+</div>
+
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h2 class="w3-center"><u>WHERE TO JOIN</u></h2>
+  <p class="w3-center"><em>Click below for more information!</em></p>
+
+  <div class="w3-padding-32 w3-center">
+    <a href="https://discord.gg/PdhzsnD9"><img class="discordlogo" src="Discord-Logo.png"></img></a>
+    
+  </div>
+</div>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>y
