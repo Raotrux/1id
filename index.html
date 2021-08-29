@@ -5,13 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Open Sans", sans-serif;}
 body, html {
   height: 100%;
-  color: #777;
+  color: #474747;
   line-height: 1.8;
+  background-color: #c4c4c4
+}
+
+.redfont {
+  color: #5f0b0b
 }
 
 /* Create a Parallax Effect */
@@ -24,19 +30,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('1idlogo.png');
+  background-image: url('images/1idlogo.png');
   min-height: 100%;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url('test2.jpg');
+  background-image: url('images/regiments.jpg');
   min-height: 400px;
 }
 
 /* Discord Logo */
 .discordlogo {
-  width: 40%;
+  width: 30%;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -50,7 +56,7 @@ body, html {
   }
 
   .bgimg-1 {
-    background-image: url('Avatar.png');
+    background-image: url('images/Avatar.png');
   }
 }
 
@@ -60,6 +66,22 @@ body, html {
     min-height: 50%;
     background-attachment: scroll;
   }
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
 }
 </style>
 <body>
@@ -72,16 +94,25 @@ body, html {
 
 
 <!-- Container (About Section) -->
+
 <div class="w3-content w3-container w3-padding-64" id="about">
+  <div class="video-container">
+    <iframe width="854" height="480"
+        src="https://www.youtube.com/embed/UDnUD73gRXk">
+    </iframe>
+  </div>
   <h2 class="w3-center"><u>ABOUT US</u></h2>
   <h4>Welcome to the 1st Infantry Division! We are an international Mil-Sim light with all the tactics, structure, and skill of a mil-sim without the yes sir no sir hassle. Our mission is to be the best of the best while having the most fun along the way. We welcome anyone with a desire to play the game the right way with open arms. We are a mature, and understanding community with no mandatory attendance at training's or events. We run multiple community wide events and operations from 1 life events, death races, competetive matches against other teams, to internal 1ID scrims between Squads or against other units. </h3>
   <h4>After a new recruit indicates they'd like to join on our Discord server, they will be scheduled for basic training. Basic training ensures all members have a basic understanding of the game and have an idea of what to expect when operating in 1ID. This training takes about 15 to 20 minutes. Afterwards recruits will be promoted and be considered a member of 1ID.</h4>
+  <br >
+  <p class="w3-center w3-large">If you're interesting in joining or want to come hang out, <a href="https://discord.gg/Pan4yK959F">join us at our Discord!</a></p>
+  <p class="w3-center w3-large">If you want to support us, we have a <a href="https://www.patreon.com/1ID/posts">Patreon</a> and <a href="https://www.paypal.com/pools/c/8wQQHzXwod ">PayPal</a>. </p>
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide"><b>REGIMENTS</b></span>
+     <span class="w3-xxlarge w3-wide"><b>REGIMENTS</b></span>
   </div>
 </div>
 
@@ -108,16 +139,12 @@ body, html {
 
 
 <hr />
-<!-- Container (Where to Join) -->
+<!-- Container (Where to Join) 
 <div class="w3-content w3-container w3-padding-64" id="discord">
   <h2 class="w3-center"><u>WHERE TO JOIN</u></h2>
-  <p class="w3-center"><em>Join the Discord for more information!</em></p>
-
-  <div class="w3-padding-32 w3-center">
-    <a href="https://discord.gg/mNfRdMBsmS"><img class="discordlogo" src="Discord-Logo.png"></img></a>
-  </div>
+  <p class="w3-center"><em>Click the link or the Discord logo below! <br> <a href="https://discord.gg/Pan4yK959F">https://discord.gg/Pan4yK959F</a></em></p>
 </div>
-
+-->
 
 <script>
 // Modal Image Gallery
