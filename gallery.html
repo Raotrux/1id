@@ -23,8 +23,13 @@ body, html {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
-  width: 70%;
+  width: 65%;
   margin: auto;
+  padding-top: 50px;
+}
+
+.navbar {
+  margin-bottom: 10px;;
 }
 
 /* Hide the images by default */
@@ -202,10 +207,23 @@ function showThumbnails() {
 }
 </script>
 <body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-dark-gray navbar">
+  <div class="w3-bar header-color w3-card" id="myNavbar">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button hover">HOME</a>
+      <a href="gallery.html" class="w3-bar-item w3-button hover"></i>GALLERY</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
 <!-- Container for the image gallery -->
 <div class="container">
-
   <!-- Full-width images with number text -->
   <div class="mySlides" style="display: block;">
     <div class="numbertext">1 / 9</div>
@@ -262,7 +280,7 @@ function showThumbnails() {
   </div>
 
   <!-- Thumbnail images -->
-  <div class="row">
+  <div class="row w3-padding-16">
     <div class="column myThumbnails">
       <img class="demo cursor" src="images/user-submitted/1.png" style="width:99%" onclick="currentSlide(1)" alt="The Woods">
     </div>
