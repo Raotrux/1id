@@ -16,8 +16,8 @@ body, html {
   background-color: #c4c4c4
 }
 
-.redfont {
-  color: #5f0b0b
+.redbg {
+  background-color: #5f0b0b
 }
 
 /* Create a Parallax Effect */
@@ -85,6 +85,21 @@ body, html {
 }
 </style>
 <body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar header-color w3-card" id="myNavbar">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button hover">HOME</a>
+      <a href="pages/gallery.html" class="w3-bar-item w3-button hover"><i class="fa fa-question-circle"></i>GALLERY</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
 
 
 <!-- First Parallax Image with Logo Text -->
@@ -160,9 +175,9 @@ window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-dark-gray";
     } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top  w3-dark-gray", "");
     }
 }
 
