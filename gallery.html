@@ -151,7 +151,10 @@ var thumbnailIndex = 1;
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  slideIndex += n
+  showSlides(slideIndex);
+  showThumbnails(slideIndex)
+  currentSlide(slideIndex)
 }
 
 // Thumbnail image controls
@@ -166,6 +169,7 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
+
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -182,13 +186,8 @@ function showSlides(n) {
 
 // Next/previous controls
 function plusThumbnails(n) {
-  showThumbnails(slideIndex += n);
-}
-
-function backThumbnails(n) {
-  if (slideIndex > 1){
-    showThumbnails(slideIndex += n);
-  }
+  slideIndex += n
+  showThumbnails(slideIndex + n)
 }
 
 function showThumbnails() {
@@ -225,50 +224,26 @@ function showThumbnails() {
 <!-- Container for the image gallery -->
 <div class="container">
   <!-- Full-width images with number text -->
-  <div class="mySlides" style="display: block;">
-    <div class="numbertext">1 / 9</div>
-      <img src="images/user-submitted/1.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 9</div>
-      <img src="images/user-submitted/2.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 9</div>
-      <img src="images/user-submitted/3.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">4 / 9</div>
-      <img src="images/user-submitted/4.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 9</div>
-      <img src="images/user-submitted/5.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">6 / 9</div>
-      <img src="images/user-submitted/6.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">7 / 9</div>
-      <img src="images/user-submitted/7.png" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">8 / 9</div>
-      <img src="images/user-submitted/8.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">9 / 9</div>
-      <img src="images/user-submitted/9.png" style="width:100%">
-  </div>
+  <div class="mySlides" style="display: block;"><div class="numbertext">1</div><img src="https://i.imgur.com/WrJxcMz.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">2</div><img src="https://i.imgur.com/8r9OQeo.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">3</div><img src="https://i.imgur.com/aBiZJHu.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">4</div><img src="https://i.imgur.com/2g9goNK.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">5</div><img src="https://i.imgur.com/UcdS77g.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">6</div><img src="https://i.imgur.com/Vb9wKQR.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">7</div><img src="https://i.imgur.com/zibMN0I.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">8</div><img src="https://i.imgur.com/B2jqGBt.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">9</div><img src="https://i.imgur.com/PqzqW7B.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">10</div><img src="https://i.imgur.com/WnaB0Ep.png" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">11</div><img src="https://i.imgur.com/AVSzw3g.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">12</div><img src="https://i.imgur.com/tCXJDOt.png" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">13</div><img src="https://i.imgur.com/5eaf4Uy.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">14</div><img src="https://i.imgur.com/lEr4awH.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">15</div><img src="https://i.imgur.com/sMWtAkG.png" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">16</div><img src="https://i.imgur.com/YYt9uQi.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">17</div><img src="https://i.imgur.com/5AYOze9.png" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">18</div><img src="https://i.imgur.com/xuKk4A8.png" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">19</div><img src="https://i.imgur.com/cBfOvEL.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">20</div><img src="https://i.imgur.com/NcOZKXB.jpg" style="width:100%"></div>
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -281,36 +256,29 @@ function showThumbnails() {
 
   <!-- Thumbnail images -->
   <div class="row w3-padding-16">
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/1.png" style="width:99%" onclick="currentSlide(1)" alt="Is he parked on this guy? I cant tell..">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/2.png" style="width:99%" onclick="currentSlide(2)" alt="Beautiful landing cam photo of some sand.">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/3.png" style="width:99%" onclick="currentSlide(3)" alt="Are they touching tips? Is that whats happening?">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/4.jpg" style="width:99%" onclick="currentSlide(4)" alt="How did this even happen? I want to hear the story.">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/5.png" style="width:99%" onclick="currentSlide(5)" alt="Deadman giving a thumbsup. (I think)">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/6.png" style="width:99%" onclick="currentSlide(6)" alt="Riot as a pacifist, I guess.">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/7.png" style="width:99%" onclick="currentSlide(7)" alt="Drivers cant see shit..">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/8.jpg" style="width:99%" onclick="currentSlide(8)" alt="I don't understand.">
-    </div>
-    <div class="column myThumbnails">
-      <img class="demo cursor" src="images/user-submitted/9.png" style="width:99%" onclick="currentSlide(9)" alt="I still don't understand.">
-    </div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/WrJxcMz.jpg" style="width:99%" onclick="currentSlide(1)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/8r9OQeo.jpg" style="width:99%" onclick="currentSlide(2)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/aBiZJHu.jpg" style="width:99%" onclick="currentSlide(3)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/2g9goNK.jpg" style="width:99%" onclick="currentSlide(4)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/UcdS77g.jpg" style="width:99%" onclick="currentSlide(5)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/Vb9wKQR.jpg" style="width:99%" onclick="currentSlide(6)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/zibMN0I.jpg" style="width:99%" onclick="currentSlide(7)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/B2jqGBt.jpg" style="width:99%" onclick="currentSlide(8)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/PqzqW7B.jpg" style="width:99%" onclick="currentSlide(9)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/WnaB0Ep.png" style="width:99%" onclick="currentSlide(10)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/AVSzw3g.jpg" style="width:99%" onclick="currentSlide(11)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/tCXJDOt.png" style="width:99%" onclick="currentSlide(12)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/5eaf4Uy.jpg" style="width:99%" onclick="currentSlide(13)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/lEr4awH.jpg" style="width:99%" onclick="currentSlide(14)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/sMWtAkG.png" style="width:99%" onclick="currentSlide(15)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/YYt9uQi.jpg" style="width:99%" onclick="currentSlide(16)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/5AYOze9.png" style="width:99%" onclick="currentSlide(17)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/xuKk4A8.png" style="width:99%" onclick="currentSlide(18)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/cBfOvEL.jpg" style="width:99%" onclick="currentSlide(19)" alt=""></div>
+    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/NcOZKXB.jpg" style="width:99%" onclick="currentSlide(20)" alt=""></div>
   </div>
-  <a class="tb-prev" onclick="backThumbnails(-1)">&#10094;</a>
-  <a class="tb-next" onclick="plusThumbnails(1)">&#10095;</a>
+  <a class="tb-prev" onclick="plusThumbnails(-5)">&#10094;</a>
+  <a class="tb-next" onclick="plusThumbnails(5)">&#10095;</a>
 </div>
 
 
