@@ -58,13 +58,35 @@ body, html {
   <h3><b><u>Hotkeys:</u></b></h3>
   <p><b>SHIFT + P:</b> Enables AdminCam.</p><br>
 
-  <h3><b><u>Console Commands:</u></b> (accessed by hitting <b>`</b> )</h3>
-  <p><b>Note:</b> Below commands must include a '0' or '1' at the end (ie. 'AdminForceAllRoleAvailability 0' or 'AdminForceAllRoleAvailability 1')</p>
-  <p><b>AdminForceAllRoleAvailability 1:</b> Allows players to choose whichever kit they want.</p>
-  <p><b>AdminDisableVehicleKitRequirement 1:</b> Allows players to access vehicles that have kit requirements (Pilot / Crewman vehicles)</p>
-  <p><b>AdminDisableVehicleTeamRequirement 1:</b> Allows players to access any vehicle, including enemy vehicles.</p>
+  <h3><b><u>Server Console Commands:</u></b> (accessed by hitting <b>`</b> in the server)</h3>
 
-  
+  <p><b>AdminForceAllRoleAvailability <i>[0 / 1]</i>:</b> Allows players to choose whichever kit they want.</p>
+  <p><b>AdminDisableVehicleKitRequirement <i>[0 / 1]</i>:</b> Allows players to access vehicles that have kit requirements (Pilot / Crewman vehicles)</p>
+  <p><b>AdminDisableVehicleTeamRequirement <i>[0 / 1]</i>:</b> Allows players to access any vehicle, including enemy vehicles.</p>
+  <p><b>AdminKick <i>[NameOrSteamId] [KickReason]</i>:</b> Kicks a player with a reason.</p> 
+  <p><b>AdminBan <i>[NameOrSteamId] [BanLength] [BanReason]</i>:</b> Bans a player for a specified time length with a reason.</p>   
+  <p><b>AdminBroadcast <i>[Message]</i>:</b> Send a message to the entire server. (the yellow messages that shows up in the top center)</p>
+  <p><b>AdminEndMatch:</b> Ends the match.</p>    
+  <p><b>AdminPauseMatch:</b> Pauses the match.</p>    
+  <p><b>AdminUnpauseMatch:</b> Unpauses the match.</p>    
+  <p><b>AdminChangeLayer <i>[LayerName]</i>:</b> Changes the layer to the specific map/layer.</p>
+  <p><b>AdminSetNextLayer <i>[LayerName]</i>:</b> Sets the next layer to the specified map/layer.</p>
+  <p><b>AdminSlomo <i>[TimeDilation]</i>:</b> Sets the server speed to the specified multiplier. 1 is normal. .5 is half-speed. 2 is double speed.</p> 
+  <p><b>AdminForceTeamChange <i>[NameOrSteamId]</i>:</b> Forces the specified player to the opposite team.</p>
+  <p><b>AdminDemoteCommander <i>[PlayerName]</i>:</b> Demotes the specified player from the Commander position.</p>
+  <p><b>AdminDisbandSquad <i>[TeamNumber] [SquadIndex]</i>:</b> Disbands the specified squad from the specified team.</p>
+  <p><b>AdminRemovePlayerFromSquad <i>[PlayerName]</i>:</b> Removes the specified player from their squad.</p>
+  <p><b>AdminWarn <i>[NameOrSteamId] [WarnReason]</i>:</b> Send a warning message to the specified player.</p>
+  <p><b>AdminCreateVehicle <i>[VehicleLink]</i>:</b> Spawns in specified vehicle at the admins location.</p>
+  <p><b>AdminCreateDeployable <i>[DeployableLink]</i>:</b> Spawns in specified deployable at the admins location.</p><br>
+
+  <h3><b><u>Common Vehicles/Deployable Commands:</u></b></h3>
+  <p><b>Logistics Truck:</b> AdminCreateVehicle /Game/Vehicles/Ural4320/BP_Ural_4320_logi.BP_Ural_4320_logi_C</p> 
+  <p><b>Helicopter:</b> AdminCreateVehicle /Game/Vehicles/UH60M/BP_UH60.BP_UH60_C</p> 
+  <p><b>MBT:</b> AdminCreateVehicle /game/vehicles/M1A2/BP_M1A2_woodland.BP_M1A2_woodland_C</p> 
+  <p><b>Ammo Crate:</b> AdminCreateDeployable /Game/Gameplay/Deployables/BP_Ammocrate.BP_Ammocrate_C</p> 
+
+  <br><br><br><br><br>
 </div>
 
 <!-- Footer -->
