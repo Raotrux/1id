@@ -135,74 +135,79 @@ body, html {
 }
 
 /* Add a transparency effect for thumnbail images */
-.demo {
+.tb-opacity {
   opacity: 0.6;
 }
 
 .active,
-.demo:hover {
+.tb-opacity:hover {
   opacity: 1;
 }
 </style>
 <script>
 var slideIndex = 1;
-var thumbnailIndex = 1;
-
 
 // Next/previous controls
 function plusSlides(n) {
+  currentSlide(slideIndex + n)
+}
+
+function plusThumbnails(n) {
   slideIndex += n
-  showSlides(slideIndex);
-  showThumbnails(slideIndex)
-  currentSlide(slideIndex)
+  showThumbnails()
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   slideIndex = n
   showSlides(slideIndex);
-  showThumbnails(slideIndex)
 }
 
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
+  
   var captionText = document.getElementById("caption");
 
+  //If the current slide is greater than the amount of slides, set to Index 1 (this would occur if user clicks next while viewing last image)
   if (n > slides.length) {slideIndex = 1}
+
+  //If the current slide is less than 1, than set to the last Index (this would occur if user clicks previous while viewing first image)
   if (n < 1) {slideIndex = slides.length}
+
+  //Makes all images hidden by default
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+  
+
+  //Sets the current Index to be active and displayed to the user
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
+  
 
-
-// Next/previous controls
-function plusThumbnails(n) {
-  slideIndex += n
-  showThumbnails(slideIndex + n)
+  
+  showThumbnails()
 }
 
 function showThumbnails() {
   var i;
   var slides = document.getElementsByClassName("myThumbnails");
-  if (slideIndex < slides.length){
-    //Make all slides hidden by default
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i=slideIndex-1; i < (slideIndex+5); i++) {
-      slides[i].style.display = "block";
-    }
+  //Make all slides hidden by default
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  
+  //Display current index plus 5 other pictures
+  for (i=slideIndex-1; i < (slideIndex+5); i++) {
+    slides[i].style.display = "block";
+  }
+
+  var thumbnails = document.getElementsByClassName("tb-opacity");
+  for (i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+  }
+  thumbnails[slideIndex-1].className += " active";
+  //Sets the caption for the photo
+  captionText.innerHTML = thumbnails[slideIndex-1].alt;
 }
 </script>
 <body>
@@ -224,7 +229,7 @@ function showThumbnails() {
 <!-- Container for the image gallery -->
 <div class="container">
   <!-- Full-width images with number text -->
-  <div class="mySlides" style="display: block;"><div class="numbertext">1</div><img src="https://i.imgur.com/WrJxcMz.jpg" style="width:100%"></div>
+  <div class="mySlides"><div class="numbertext">1</div><img src="https://i.imgur.com/WrJxcMz.jpg" style="width:100%"></div>
   <div class="mySlides"><div class="numbertext">2</div><img src="https://i.imgur.com/8r9OQeo.jpg" style="width:100%"></div>
   <div class="mySlides"><div class="numbertext">3</div><img src="https://i.imgur.com/aBiZJHu.jpg" style="width:100%"></div>
   <div class="mySlides"><div class="numbertext">4</div><img src="https://i.imgur.com/2g9goNK.jpg" style="width:100%"></div>
@@ -256,26 +261,26 @@ function showThumbnails() {
 
   <!-- Thumbnail images -->
   <div class="row w3-padding-16">
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/WrJxcMz.jpg" style="width:99%" onclick="currentSlide(1)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/8r9OQeo.jpg" style="width:99%" onclick="currentSlide(2)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/aBiZJHu.jpg" style="width:99%" onclick="currentSlide(3)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/2g9goNK.jpg" style="width:99%" onclick="currentSlide(4)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/UcdS77g.jpg" style="width:99%" onclick="currentSlide(5)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/Vb9wKQR.jpg" style="width:99%" onclick="currentSlide(6)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/zibMN0I.jpg" style="width:99%" onclick="currentSlide(7)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/B2jqGBt.jpg" style="width:99%" onclick="currentSlide(8)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/PqzqW7B.jpg" style="width:99%" onclick="currentSlide(9)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/WnaB0Ep.png" style="width:99%" onclick="currentSlide(10)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/AVSzw3g.jpg" style="width:99%" onclick="currentSlide(11)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/tCXJDOt.png" style="width:99%" onclick="currentSlide(12)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/5eaf4Uy.jpg" style="width:99%" onclick="currentSlide(13)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/lEr4awH.jpg" style="width:99%" onclick="currentSlide(14)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/sMWtAkG.png" style="width:99%" onclick="currentSlide(15)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/YYt9uQi.jpg" style="width:99%" onclick="currentSlide(16)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/5AYOze9.png" style="width:99%" onclick="currentSlide(17)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/xuKk4A8.png" style="width:99%" onclick="currentSlide(18)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/cBfOvEL.jpg" style="width:99%" onclick="currentSlide(19)" alt=""></div>
-    <div class="column myThumbnails"><img class="demo cursor" src="https://i.imgur.com/NcOZKXB.jpg" style="width:99%" onclick="currentSlide(20)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/WrJxcMz.jpg" style="width:100%" onclick="currentSlide(1)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/8r9OQeo.jpg" style="width:100%" onclick="currentSlide(2)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/aBiZJHu.jpg" style="width:100%" onclick="currentSlide(3)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/2g9goNK.jpg" style="width:100%" onclick="currentSlide(4)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/UcdS77g.jpg" style="width:100%" onclick="currentSlide(5)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/Vb9wKQR.jpg" style="width:100%" onclick="currentSlide(6)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/zibMN0I.jpg" style="width:100%" onclick="currentSlide(7)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/B2jqGBt.jpg" style="width:100%" onclick="currentSlide(8)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/PqzqW7B.jpg" style="width:100%" onclick="currentSlide(9)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/WnaB0Ep.png" style="width:100%" onclick="currentSlide(10)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/AVSzw3g.jpg" style="width:100%" onclick="currentSlide(11)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/tCXJDOt.png" style="width:100%" onclick="currentSlide(12)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/5eaf4Uy.jpg" style="width:100%" onclick="currentSlide(13)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/lEr4awH.jpg" style="width:100%" onclick="currentSlide(14)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/sMWtAkG.png" style="width:100%" onclick="currentSlide(15)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/YYt9uQi.jpg" style="width:100%" onclick="currentSlide(16)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/5AYOze9.png" style="width:100%" onclick="currentSlide(17)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/xuKk4A8.png" style="width:100%" onclick="currentSlide(18)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/cBfOvEL.jpg" style="width:100%" onclick="currentSlide(19)" alt=""></div>
+    <div class="column myThumbnails"><img class="tb-opacity cursor" src="https://i.imgur.com/NcOZKXB.jpg" style="width:100%" onclick="currentSlide(20)" alt=""></div>
   </div>
   <a class="tb-prev" onclick="plusThumbnails(-5)">&#10094;</a>
   <a class="tb-next" onclick="plusThumbnails(5)">&#10095;</a>
@@ -284,7 +289,6 @@ function showThumbnails() {
 
 <script>
 showSlides(slideIndex);
-showThumbnails()
 </script>
 
 <!-- Footer -->
