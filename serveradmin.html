@@ -62,8 +62,6 @@ body, html {
 
   <h3><b><u>General Server Commands:</u></b></h3>
   <p><b>AdminForceAllRoleAvailability <i>[0 / 1]</i>:</b> Allows players to choose whichever kit they want.</p>
-  <p><b>AdminAlwaysValidPlacement <i>[0 / 1]</i>:</b> Allows deployables to be placed anywhere without any restrictions whatsoever.</p>
-  <p><b>AdminForceAllDeployableAvailability <i>[0 / 1]</i>:</b> Removes restrictions required to place down deployables.</p>
   <p><b>AdminNoTeamChangeTimer <i>[0 / 1]</i>:</b> Disable Team change timer.</p>
   <p><b>AdminNoRespawnTimer <i>[0 / 1]</i>:</b> Disable Respawn timer.</p>
   <p><b>DebugToggleGodMode:</b> Enables/disabled GodMode.</p>
@@ -89,14 +87,17 @@ body, html {
   <p><b>AdminBan <i>[NameOrSteamId] [BanLength] [BanReason]</i>:</b> Bans a player for a specified time length with a reason.</p>  
   <p><b>AdminTeleportToPlayer <i>[PlayerName]</i>:</b> Teleports to the specified player.</p>  
 
-
-  <h3><b><u>Vehicles/Deployable Commands:</u></b></h3>
-  <p><b>AdminCreateVehicle <i>[VehicleLink]</i>:</b> Spawns in specified vehicle at the admins location.</p>
+  <h3><b><u>Deployable Commands:</u></b></h3>
+  <p><b>AdminAlwaysValidPlacement <i>[0 / 1]</i>:</b> Allows deployables to be placed anywhere without any restrictions whatsoever.</p>
+  <p><b>AdminForceAllDeployableAvailability <i>[0 / 1]</i>:</b> Removes restrictions required to place down deployables.</p>
   <p><b>AdminCreateDeployable <i>[DeployableLink]</i>:</b> Spawns in specified deployable at the admins location.</p>
+
+  <h3><b><u>Vehicles Commands:</u></b></h3>
+  <p><b>AdminCreateVehicle <i>[VehicleLink]</i>:</b> Spawns in specified vehicle at the admins location.</p>
   <p><b>AdminDisableVehicleKitRequirement <i>[0 / 1]</i>:</b> Allows players to access vehicles that have kit requirements (Pilot / Crewman vehicles)</p>
   <p><b>AdminDisableVehicleTeamRequirement <i>[0 / 1]</i>:</b> Allows players to access any vehicle, including enemy vehicles.</p>
   <p><b>AdminDisableVehicleClaiming <i>[0 / 1]</i>:</b> Allows players to claim a vehicle withour SL permission.</p>
-  <br>
+  <br><br>
   <p><b>Logistics Truck:</b> AdminCreateVehicle /Game/Vehicles/Ural4320/BP_Ural_4320_logi.BP_Ural_4320_logi_C</p> 
   <p><b>Helicopter:</b> AdminCreateVehicle /Game/Vehicles/UH60M/BP_UH60.BP_UH60_C</p> 
   <p><b>MBT:</b> AdminCreateVehicle /game/vehicles/M1A2/BP_M1A2_woodland.BP_M1A2_woodland_C</p> 
