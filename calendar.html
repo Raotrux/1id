@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>1st Infantry Division</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  color: #474747;
+  line-height: 1.8;
+  background-color: #c4c4c4
+}
+
+/* Position the image container */
+.container {
+  margin: auto;
+  padding-top: 50px;
+}
+
+.navbar {
+  margin-bottom: 10px;;
+}
+
+</style>
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-black navbar">
+  <div class="w3-bar header-color w3-card" id="myNavbar">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button hover">HOME</a>
+      <a href="calendar.html" class="w3-bar-item w3-button hover">CALENDAR</a>
+      <a href="gallery.html" class="w3-bar-item w3-button hover"></i>GALLERY</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Container for the Calendar -->
+<div class="container">
+  <div class="w3-center">
+    <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=anJibzQ1a2pwYmM4dTZpOG9udjN2YWwzMjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23D50000&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=1" style="border-width:0" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<script>
+  // Change style of navbar on scroll
+  window.onscroll = function() {myFunction()};
+  function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+      } else {
+          navbar.className = navbar.className.replace(" w3-card w3-animate-top  w3-black", "");
+      }
+  }
+  
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+  
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+  
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+  }
+  </script>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16 w3-bottom">
+  <div class="w3-large w3-section">
+    <p>Find us here: 
+    <a href="https://www.paypal.com/pools/c/8wQQHzXwod"><i class="fa fa-paypal w3-hover-opacity"></i></a>
+    <a href="https://www.patreon.com/1ID/posts"><i class="fa fa-dollar w3-hover-opacity"></i></a>
+    <a href="https://discord.gg/mNfRdMBsmS"><i class="fa fa-microphone w3-hover-opacity"></i></a>
+  </p>
+  </div>
+</footer>
+</body>
+</html>

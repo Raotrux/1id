@@ -42,6 +42,7 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="index.html" class="w3-bar-item w3-button hover">HOME</a>
+      <a href="calendar.html" class="w3-bar-item w3-button hover">CALENDAR</a>
       <a href="gallery.html" class="w3-bar-item w3-button hover"></i>GALLERY</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -100,7 +101,7 @@ body, html {
   <p><b>AdminCreateVehicle <i>[VehicleLink]</i>:</b> Spawns in specified vehicle at the admins location.</p>
   <p><b>AdminDisableVehicleKitRequirement <i>[0 / 1]</i>:</b> Allows players to access vehicles that have kit requirements (Pilot / Crewman vehicles)</p>
   <p><b>AdminDisableVehicleTeamRequirement <i>[0 / 1]</i>:</b> Allows players to access any vehicle, including enemy vehicles.</p>
-  <p><b>AdminDisableVehicleClaiming <i>[0 / 1]</i>:</b> Allows players to claim a vehicle withour SL permission.</p>
+  <p><b>AdminDisableVehicleClaiming <i>[0 / 1]</i>:</b> Allows players to claim a vehicle without SL permission.</p>
   <br><br>
   <p><b>Logistics Truck:</b> AdminCreateVehicle /Game/Vehicles/Ural4320/BP_Ural_4320_logi.BP_Ural_4320_logi_C</p> 
   <p><b>Helicopter:</b> AdminCreateVehicle /Game/Vehicles/UH60M/BP_UH60.BP_UH60_C</p> 
@@ -117,6 +118,35 @@ body, html {
 
   <br><br><br><br><br>
 </div>
+
+<script>
+  // Change style of navbar on scroll
+  window.onscroll = function() {myFunction()};
+  function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+      } else {
+          navbar.className = navbar.className.replace(" w3-card w3-animate-top  w3-black", "");
+      }
+  }
+  
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+  
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+  
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+  }
+  </script>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16 w3-bottom">
